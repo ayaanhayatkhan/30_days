@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ayaan · 30-Day Coding Plan</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--bg2:#f7f6f3;--bg3:#eeedea;
+  --text:#1a1a18;--text2:#6b6b65;--text3:#9b9b95;
+  --border:rgba(0,0,0,0.10);--border2:rgba(0,0,0,0.20);
+  --r:8px;--rl:12px;
+  --c-green:#1D9E75;--c-green-bg:#E1F5EE;--c-green-text:#085041;
+  --c-amber-bg:#FAEEDA;--c-amber-text:#633806;--c-amber-border:#BA7517;
+  --c-blue:#185FA5;--c-blue-bg:#E6F1FB;--c-blue-text:#0C447C;
+  --c-purple-bg:#EEEDFE;--c-purple-text:#3C3489;
+  --c-teal-bg:#E1F5EE;--c-teal-text:#085041;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#1c1c1a;--bg2:#242422;--bg3:#2c2c28;
+  --text:#f0f0ee;--text2:#a0a098;--text3:#606058;
+  --border:rgba(255,255,255,0.10);--border2:rgba(255,255,255,0.20);
+  --c-green-bg:#04342C;--c-green-text:#9FE1CB;
+  --c-amber-bg:#412402;--c-amber-text:#FAC775;
+  --c-blue-bg:#042C53;--c-blue-text:#B5D4F4;
+  --c-purple-bg:#26215C;--c-purple-text:#CECBF6;
+  --c-teal-bg:#04342C;--c-teal-text:#9FE1CB;
+}}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg3);color:var(--text);min-height:100vh;font-size:15px;line-height:1.5}
+.page{max-width:780px;margin:0 auto;padding:1.5rem 1rem 3rem}
+.site-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:0.5px solid var(--border)}
+.site-title{font-size:18px;font-weight:500}
+.site-subtitle{font-size:12px;color:var(--text2);margin-top:2px}
+.gh-link{font-size:12px;color:var(--c-blue);text-decoration:none;display:flex;align-items:center;gap:4px;border:0.5px solid var(--border2);padding:5px 10px;border-radius:var(--r)}
+.gh-link:hover{background:var(--bg2)}
+.rhythm{display:flex;gap:5px;align-items:center;margin:.5rem 0 .8rem;flex-wrap:wrap}
+.rs{font-size:11px;padding:2px 8px;border-radius:20px;background:var(--bg2);color:var(--text2)}
+.ra{color:var(--text3);font-size:11px}
+.rt{font-size:11px;color:var(--text3);margin-left:4px}
+.stats{display:flex;gap:8px;margin-bottom:.5rem}
+.sc{background:var(--bg2);border-radius:var(--r);padding:.45rem .9rem;flex:1;border:0.5px solid var(--border)}
+.sv{font-size:20px;font-weight:500}
+.sl{font-size:10px;color:var(--text2);margin-top:1px}
+.pw{background:var(--bg2);border-radius:20px;height:5px;margin:.4rem 0 .8rem;overflow:hidden;border:0.5px solid var(--border)}
+.pf{height:100%;background:var(--c-green);border-radius:20px;transition:width .4s}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:11px;color:var(--text2);margin-bottom:.6rem}
+.leg{display:flex;align-items:center;gap:4px}
+.ldot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.dnv{display:flex;align-items:center;gap:10px;margin-bottom:.5rem}
+.nb{padding:5px 16px;font-size:13px;border:0.5px solid var(--border2);border-radius:var(--r);background:var(--bg);cursor:pointer;color:var(--text)}
+.nb:hover:not(:disabled){background:var(--bg2)}
+.nb:disabled{opacity:.35;cursor:default}
+.dlb{font-size:16px;font-weight:500;flex:1;text-align:center}
+.dgrid{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;margin-bottom:.9rem}
+.db{padding:4px 2px;font-size:11px;border:0.5px solid var(--border);border-radius:4px;background:var(--bg);cursor:pointer;text-align:center;color:var(--text2);transition:background .15s}
+.db:hover{background:var(--bg2)}
+.db.ac{border-color:var(--c-blue);color:var(--c-blue);background:var(--c-blue-bg);font-weight:500}
+.db.ad{background:var(--c-green-bg);border-color:var(--c-green);color:var(--c-green-text)}
+.db.pd{background:var(--c-amber-bg);border-color:var(--c-amber-border);color:var(--c-amber-text)}
+.tg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tc{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:border-color .2s}
+.tc.dn{border-color:var(--c-green)}
+.th{padding:.5rem .85rem;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:space-between}
+.lc .th{background:var(--c-purple-bg);color:var(--c-purple-text)}
+.lp .th{background:var(--c-amber-bg);color:var(--c-amber-text)}
+.ly .th{background:var(--c-teal-bg);color:var(--c-teal-text)}
+.lw .th{background:var(--c-blue-bg);color:var(--c-blue-text)}
+.tb{padding:.75rem .9rem}
+.tt{font-size:13px;font-weight:500;margin-bottom:.4rem;line-height:1.3}
+.rd{font-size:11px;color:var(--c-blue);text-decoration:none;display:flex;align-items:center;gap:4px;margin-bottom:.45rem}
+.rd:hover{text-decoration:underline}
+.rn{font-size:11px;color:var(--text3);margin-bottom:.45rem;display:flex;align-items:center;gap:4px}
+.ta{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:.45rem}
+.pb{display:inline-flex;align-items:center;gap:3px;font-size:10px;padding:2px 7px;border-radius:20px;background:var(--c-blue-bg);color:var(--c-blue-text);margin-bottom:.35rem}
+.xl{display:inline-flex;align-items:center;gap:3px;font-size:10px;padding:2px 7px;border-radius:20px;background:var(--c-teal-bg);color:var(--c-teal-text);margin-bottom:.35rem;margin-left:4px}
+.dk{font-size:11px;padding:4px 10px;border:0.5px solid var(--border2);border-radius:var(--r);background:transparent;color:var(--text2);cursor:pointer;display:inline-flex;align-items:center;gap:4px;margin-top:.15rem;transition:all .15s}
+.dk:hover{background:var(--bg2)}
+.dk.mk{border-color:var(--c-green);color:var(--c-green-text);background:var(--c-green-bg)}
+.reset-btn{font-size:11px;color:var(--text3);border:none;background:none;cursor:pointer;padding:4px 8px;border-radius:var(--r)}
+.reset-btn:hover{background:var(--bg2);color:var(--text)}
+.footer{margin-top:2rem;padding-top:1rem;border-top:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:gap;gap:8px}
+.footer p{font-size:12px;color:var(--text3)}
+@media(max-width:540px){
+  .tg{grid-template-columns:1fr}
+  .stats{flex-wrap:wrap}
+  .sc{min-width:calc(50% - 4px)}
+  .dgrid{grid-template-columns:repeat(6,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="site-header">
+  <div>
+    <div class="site-title">Ayaan's 30-Day Coding Plan</div>
+    <div class="site-subtitle">C · C++ · Python · Web — 4 tracks daily · 1 hr each · 120 micro-assignments</div>
+  </div>
+  <a class="gh-link" href="https://github.com/ayaanhayatkhan" target="_blank" rel="noopener">
+    <i class="ti ti-brand-github" aria-hidden="true"></i>GitHub
+  </a>
+</header>
+
+<div class="rhythm">
+  <span class="rs"><i class="ti ti-book-2" aria-hidden="true"></i> Read ~40 min</span><span class="ra">→</span>
+  <span class="rs">Understand</span><span class="ra">→</span>
+  <span class="rs">Code examples</span><span class="ra">→</span>
+  <span class="rs">Micro-assignment ~20 min</span>
+  <span class="rt">4 hrs/day total</span>
+</div>
+
+<div class="stats">
+  <div class="sc"><div class="sv" id="sd">0</div><div class="sl">Tasks done</div></div>
+  <div class="sc"><div class="sv" id="sl">120</div><div class="sl">Remaining</div></div>
+  <div class="sc"><div class="sv" id="sp">0%</div><div class="sl">Progress</div></div>
+  <div class="sc"><div class="sv" id="ss">0🔥</div><div class="sl">Full day streak</div></div>
+</div>
+<div class="pw"><div class="pf" id="pf" style="width:0%"></div></div>
+
+<div class="legend">
+  <span class="leg"><span class="ldot" style="background:var(--c-green);border:0.5px solid var(--c-green)"></span>All 4 done</span>
+  <span class="leg"><span class="ldot" style="background:var(--c-amber-bg);border:0.5px solid var(--c-amber-border)"></span>Partially done</span>
+  <span class="leg"><span class="ldot" style="background:var(--c-blue-bg);border:0.5px solid var(--c-blue)"></span>Current day</span>
+  <span class="leg"><i class="ti ti-trophy" style="font-size:12px;color:var(--c-blue-text)" aria-hidden="true"></i>Project day</span>
+  <span class="leg"><i class="ti ti-arrows-exchange" style="font-size:12px;color:var(--c-teal-text)" aria-hidden="true"></i>Cross-language</span>
+</div>
+
+<div class="dnv">
+  <button class="nb" id="nb-p" onclick="setDay(cur-1)" disabled>←</button>
+  <div class="dlb" id="dlb">Day 1 of 30</div>
+  <button class="nb" id="nb-n" onclick="setDay(cur+1)">→</button>
+</div>
+<div class="dgrid" id="dgrid"></div>
+<div class="tg" id="tg"></div>
+
+<div class="footer">
+  <p>Progress saved in this browser. Mark tasks done each evening.</p>
+  <button class="reset-btn" onclick="resetProgress()"><i class="ti ti-refresh" aria-hidden="true"></i> Reset all progress</button>
+</div>
+
+</div>
+<script>
+const C=[
+["Data types & sizeof","C data types — GFG","https://www.geeksforgeeks.org/data-types-in-c/","Declare int, float, char, double, long. Print each value and its sizeof() result. Note which type uses the most memory."],
+["Functions","Functions in C — GFG","https://www.geeksforgeeks.org/functions-in-c/","Write add(a,b), subtract(a,b), celsiusToF(c). Call all from main() with labelled output. No global variables."],
+["1D Arrays","Arrays in C — GFG","https://www.geeksforgeeks.org/arrays-in-c-cpp/","int arr[8]={3,7,1,9,4,6,2,8}. Find sum, max, and min in ONE loop. Print all three results clearly."],
+["2D Arrays","2D arrays — cprogramming","https://www.cprogramming.com/tutorial/lesson8.html","3x3 matrix hardcoded with 9 values. Print it using %3d for alignment. Print its transpose directly below."],
+["Strings intro","Strings in C — GFG","https://www.geeksforgeeks.org/strings-in-c/","reverseString(char s[]) in-place with a two-pointer loop. Test with 'hello' and 'Programming'. Print before and after."],
+["String functions","C string functions — GFG","https://www.geeksforgeeks.org/string-functions-in-c/","countVowels(char s[]) and isPalindrome(char s[]). Test with 'racecar', 'hello', 'level'. Print all results."],
+["Pointers basics","Pointers in C — GFG","https://www.geeksforgeeks.org/pointers-in-c-and-c-set-1-introduction-arithmetic-and-array/","swap(int *a, int *b). Print values before and after the call in main() to confirm the swap worked."],
+["Pointer arithmetic","Pointer arithmetic — GFG","https://www.geeksforgeeks.org/pointer-arithmetics-in-c-with-examples/","maxElement(int *arr, int n) using only *(arr+i). No square brackets [ ] allowed inside the function."],
+["Structs intro","Structures in C — GFG","https://www.geeksforgeeks.org/structures-c/","Student struct (name[50], roll_no, grade). Create 3 students. printStudent(s) prints one formatted row each."],
+["Arrays of structs","Array of structs — GFG","https://www.geeksforgeeks.org/c-program-to-store-students-records-as-structures-and-sort-them-by-name/","5 students. printAll(arr,n) prints a formatted table. searchByName(arr,n,name) prints match or 'Not found'."],
+["Struct functions","Structs advanced — cprogramming","https://www.cprogramming.com/tutorial/lesson7.html","classAverage(arr,n) returns float. findTop(arr,n) returns the top Student struct. Print both results clearly."],
+["Bubble sort","Bubble sort — GFG","https://www.geeksforgeeks.org/bubble-sort/","Sort int[6]={5,2,8,1,9,3}. Print the array after every complete pass to watch it sort step by step."],
+["Recursion: factorial","Recursion in C — GFG","https://www.geeksforgeeks.org/recursive-functions/","factorial(n) recursively. Print n! for n=1 to 8. Add a static counter to count total recursive calls made."],
+["Recursion: Fibonacci","Fibonacci in C — GFG","https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/","fib(n) recursive. Print series n=0..10. Count total recursive calls. Notice how fast the count grows."],
+["Sorting structs","Sort struct array — GFG","https://www.geeksforgeeks.org/sort-an-array-of-strings-according-to-string-lengths/","Bubble sort 5 Student structs by grade descending. Print ranked list with position numbers 1st, 2nd..."],
+["Search algorithms","Searching — GFG","https://www.geeksforgeeks.org/searching-algorithms/","linearSearch() and binarySearch() on sorted int[8]. Confirm both return the same index for the same target."],
+["enum & switch","enum in C — GFG","https://www.geeksforgeeks.org/enumeration-enum-c/","enum Season {SPRING,SUMMER,AUTUMN,WINTER}. Switch prints a property of each. Loop through all 4 and print."],
+["Dynamic memory","malloc in C — GFG","https://www.geeksforgeeks.org/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/","malloc int array of user-input n. Fill with i*i values. Print. Free. Observe what happens printing after free."],
+["Review: mini gradebook","C examples — GFG","https://www.geeksforgeeks.org/c-programming-examples/","5 Student structs, bubble sort by grade, print ranked table with class average and pass/fail column."],
+["🏁 Student Records CLI","","","PROJECT 1/3: Build the menu loop. Implement [1] Add student and [2] View all (formatted table). Both must work.",true],
+["🏁 Student Records CLI","","","PROJECT 2/3: Add [3] Search by name and [4] Class average. Test all 4 options with 10 sample students.",true],
+["🏁 Student Records CLI","","","PROJECT 3/3: Input validation (no empty names, max 20 students). Clean output. Push to GitHub as 'student-records-c'.",true],
+["Preprocessor","Preprocessor — GFG","https://www.geeksforgeeks.org/cc-preprocessors/","#define MAX_STUDENTS 20 and PASS_MARK 50. Use both in a program. Add a #ifdef DEBUG section that prints extra info."],
+["Word count","String programs — GFG","https://www.geeksforgeeks.org/c-program-count-number-words-string/","countWords(char s[]) without strtok. Detect word boundaries manually. Handle consecutive spaces correctly."],
+["Anagram checker","Anagram in C — GFG","https://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/","isAnagram(char a[], char b[]) by sorting copies and comparing. Test with ('listen','silent') and ('hello','world')."],
+["Prime sieve","Sieve — GFG","https://www.geeksforgeeks.org/sieve-of-eratosthenes/","Sieve of Eratosthenes for all primes up to 100. Print them all neatly. Count them (expected: 25 primes)."],
+["Function pointers","Function pointers — GFG","https://www.geeksforgeeks.org/function-pointer-in-c/","applyToArray(arr, n, int(*f)(int)) applies any function to each element. Test with square(x) and double(x)."],
+["Refactor session","Refactoring — refactoring.guru","https://refactoring.guru/refactoring/what-is-refactoring","In student-records-c: rename vague variables, add purpose comments above every function, replace magic numbers with #define."],
+["Matrix operations","Matrix in C — GFG","https://www.geeksforgeeks.org/c-program-multiply-two-matrices/","Multiply two 2x2 int matrices. Print result. Also implement matrix addition for the same pair."],
+["Final review","—","#","Ensure all C programs compile cleanly. Add a 5-line comment block at top of each file explaining its purpose."]
+];
+
+const CPP=[
+["C++ vs C, cin/cout","C vs C++ — GFG","https://www.geeksforgeeks.org/difference-between-c-and-c/","Input name and age with cin. Output a greeting with cout. List 3 differences you notice vs the same C program."],
+["Classes & objects","Classes in C++ — GFG","https://www.geeksforgeeks.org/c-classes-and-objects/","Calculator class: private result, public add/sub/mul/div/getResult. Test all 4 operations from main and print."],
+["Constructors","Constructors — GFG","https://www.geeksforgeeks.org/constructors-c/","Person class: name + age in constructor. printInfo() method. Create 3 Person objects and call printInfo on each."],
+["Encapsulation","Encapsulation — GFG","https://www.geeksforgeeks.org/encapsulation-in-c/","BankAccount: private balance. deposit/withdraw (reject if it goes below zero) and getBalance(). Run 5 transactions."],
+["Reference variables","References in C++ — GFG","https://www.geeksforgeeks.org/references-in-c/","Two versions of increment(): one takes int&, one takes int*. Call both from main. Compare the syntax difference."],
+["Inheritance basics","Inheritance — GFG","https://www.geeksforgeeks.org/inheritance-in-c/","Animal base with speak(). Dog and Cat derived — override speak(). Create one each, call speak() on all three."],
+["Protected members","Access modifiers — GFG","https://www.geeksforgeeks.org/access-modifiers-in-c/","Vehicle (speed, fuel, protected maxSpeed). Car inherits, adds doors, uses maxSpeed. Print all from a Car object."],
+["Polymorphism","Polymorphism — GFG","https://www.geeksforgeeks.org/polymorphism-in-c/","Shape* arr[4] with 2 Circles and 2 Rectangles. Loop and call area() on each. Virtual keyword is required."],
+["Virtual & abstract","Virtual functions — GFG","https://www.geeksforgeeks.org/virtual-function-cpp/","Add pure virtual describe() to Shape. Attempt to instantiate Shape directly — read and explain the compile error."],
+["STL: vector","vector in C++ — GFG","https://www.geeksforgeeks.org/vector-in-cpp-stl/","vector<int> of 8 numbers. push_back 2 more. sort(). Erase all even numbers. Print final vector."],
+["STL: map","map in C++ — GFG","https://www.geeksforgeeks.org/map-associative-containers-the-c-standard-template-library-stl/","Word frequency counter using map<string,int>. getline() a sentence. Print word:count pairs sorted alphabetically."],
+["STL: set","set in C++ — GFG","https://www.geeksforgeeks.org/set-in-cpp-stl/","Unique words from a sentence using set<string>. Count how many duplicates were removed. Print the unique set."],
+["STL sort + lambda","sort with lambda — GFG","https://www.geeksforgeeks.org/sort-in-c-stl/","vector<Student> (name, grade). sort() descending by grade using a lambda expression. Print ranked list."],
+["STL algorithms","STL algorithms — GFG","https://www.geeksforgeeks.org/algorithms-library-c-stl/","On same vector: find_if() by name, count_if() for grade>80, min/max_element for best and worst. Print all results."],
+["Template functions","Templates in C++ — GFG","https://www.geeksforgeeks.org/templates-cpp/","maxOf<T>(a, b): call with int, double, and string. Observe same function body handling all three types."],
+["Exception handling","Exceptions in C++ — GFG","https://www.geeksforgeeks.org/exception-handling-c/","divide(a,b): throw runtime_error if b==0. Wrap in try/catch in main. Test with valid inputs and with b=0."],
+["Composition","Composition in C++ — GFG","https://www.geeksforgeeks.org/composition-in-c/","Address struct (street, city). Person class has an Address member. printFull() shows name + full address."],
+["Design session","OOP design — GFG","https://www.geeksforgeeks.org/object-oriented-programming-in-cpp/","On paper: design Library + Book classes. List every field and method. Sketch the 5-option menu. Then start coding."],
+["🏁 Library Manager","","","PROJECT 1/3: Book class (title, author, year, isAvailable). Library with vector<Book>. add() and listAll() in menu.",true],
+["🏁 Library Manager","","","PROJECT 2/3: Add search(title), borrow(title), returnBook(title). All 5 menu options working and tested with 8 books.",true],
+["🏁 Library Manager","","","PROJECT 3/3: Sort by title using STL sort + lambda. Final testing. Push to GitHub as 'library-manager-cpp'.",true],
+["STL iterators","Iterators in C++ — GFG","https://www.geeksforgeeks.org/iterators-c-stl/","Iterate vector<int> and map<string,int> using explicit begin()/end() iterators — not range-based for loops."],
+["Namespaces","Namespaces — GFG","https://www.geeksforgeeks.org/namespace-in-c/","MathUtils namespace with circleArea(r) and rectPerimeter(w,h). Use MathUtils:: in main. Also try 'using namespace'."],
+["Stack<T> challenge","STL stack — GFG","https://www.geeksforgeeks.org/stack-in-cpp-stl/","Implement Stack<T> class backed by vector: push(), pop(), peek(), isEmpty(), size(). Test with int and string."],
+["Copy constructor","Copy constructor — GFG","https://www.geeksforgeeks.org/copy-constructor-in-cpp/","MyArr class with dynamic array. Demonstrate shallow copy bug. Fix with a deep copy constructor."],
+["Refactor session","Refactoring — refactoring.guru","https://refactoring.guru/refactoring","library-manager-cpp: rename vague variables, add docstring comments above every method, improve all menu messages."],
+["Smart pointers","unique_ptr — GFG","https://www.geeksforgeeks.org/unique_ptr-in-cpp/","In a class using new/delete, switch to unique_ptr. Observe that manual delete is no longer needed."],
+["Binary search template","Binary search — GFG","https://www.geeksforgeeks.org/binary-search/","binarySearch<T>(vector<T>, target): generic template. Test with vector<int> and vector<string>. Must work for both."],
+["Algorithm challenge","C++ examples — GFG","https://www.geeksforgeeks.org/cpp-programming-examples/","Selection sort on vector<int>: count swaps. Run std::sort on same data. Print both results and swap count."],
+["Final review","—","#","Ensure library-manager-cpp compiles and runs cleanly. Add a 5-line comment at top comparing C++ OOP to C structs."]
+];
+
+const PY=[
+["Python syntax & f-strings","Python tutorial — docs.python.org","https://docs.python.org/3/tutorial/introduction.html","Print name, age, and GPA using f-strings. Use type() on each variable. Reassign one variable to a different type and print again."],
+["Strings","Python strings — Real Python","https://realpython.com/python-strings/","Slice 'Programming' into first and second half. Count each vowel. Check if it is a palindrome using [::-1] slicing."],
+["Lists","Lists — Real Python","https://realpython.com/python-lists-tuples/","List of 8 numbers: sum(), min(), max(), sorted(). Then append 99, remove the minimum value, pop the last item. Print each step."],
+["Tuples & sets","Sets — Real Python","https://realpython.com/python-sets/","Tuple of (city, country, pop) for 3 cities. Set of unique letters in 'programming'. Intersection with vowel set to find vowels."],
+["Dictionaries","Dicts — Real Python","https://realpython.com/python-dicts/","Dict of 5 student name:grade pairs. Update one grade. Loop .items() and print all. Find top student using max() with key."],
+["Functions","Functions — Real Python","https://realpython.com/defining-your-own-python-function/","stats(nums) returns (min,max,avg) as tuple — unpack and print. greet(name, greeting='Hello') with default argument. Call both."],
+["List comprehensions","Comprehensions — Real Python","https://realpython.com/list-comprehension-python/","Even numbers 1-20 as a list comprehension. Squares as a dict comprehension. Words longer than 4 chars filtered from a sentence."],
+["Lambda, map, filter","Lambda — Real Python","https://realpython.com/python-lambda/","lambda double and square. map() to apply double to a list. filter() for positives only. Compare output to list comprehension."],
+["Modules","Modules — Python docs","https://docs.python.org/3/tutorial/modules.html","math: sqrt(144), ceil(3.2), pi. random: choice, randint, shuffle. os: getcwd(), listdir(), path.join(). Use all three modules."],
+["File I/O","Files — Real Python","https://realpython.com/read-write-files-python/","Write 5 student names to names.txt. Read back with readlines(). Count lines. Append 2 more names. Read and count again."],
+["Exceptions","Exceptions — Python docs","https://docs.python.org/3/tutorial/errors.html","try/except FileNotFoundError on a bad file path. raise ValueError for grade < 0 or > 100 in a function. Test both cases."],
+["Classes","OOP — Real Python","https://realpython.com/python3-object-oriented-programming/","Student class: name, grade in __init__. __str__ returns formatted string. Create 3 students. Sort a list of them by grade."],
+["Inheritance","Inheritance — Real Python","https://realpython.com/inheritance-composition-python/","Person base: greet(). Student inherits, overrides greet(). Teacher inherits, adds subject. Test all with isinstance()."],
+["Dunder methods","Dunders — Real Python","https://realpython.com/operator-function-overloading/","BankAccount with __str__ (shows balance), __gt__ (compare two accounts), __add__ (merge balances). Test all three."],
+["Generators","Generators — Real Python","https://realpython.com/introduction-to-python-generators/","fib_gen() yields Fibonacci numbers. Print first 10 using next(). Then iterate same generator with for loop."],
+["@property","Properties — Real Python","https://realpython.com/python-property/","Circle: _radius private. @property getter. @radius.setter validates > 0, raises ValueError for negative. Test with -1."],
+["JSON module","JSON — Real Python","https://realpython.com/python-json/","json.dump 5 contacts (name, phone) to contacts.json with indent=2. json.load to read back. Search by name. Re-save sorted."],
+["requests + APIs","requests — Real Python","https://realpython.com/python-requests/","Fetch a random joke from the joke API. Print setup + punchline. try/except ConnectionError. Add a retry (max 2 tries)."],
+["🏁 Quiz Game CLI","","","PROJECT 1/3: Create questions.json (10 Qs, 4 options each, answer key). Load file. Display Q1-Q3 with A-D options. Verify loading.",true],
+["🏁 Quiz Game CLI","","","PROJECT 2/3: Ask all 10 questions. Track score. Show total correct + percentage at end. Save to highscore.txt if it beats the best.",true],
+["🏁 Quiz Game CLI","","","PROJECT 3/3: Show previous high score at game start. Add 'Play again?' loop. Handle invalid input. Push to GitHub 'quiz-game-python'.",true],
+["venv & pip","pip — Real Python","https://realpython.com/what-is-pip/","Create venv, activate. pip install requests. pip list. pip freeze > requirements.txt. Deactivate. Test re-activating."],
+["Regex basics","Regex — Real Python","https://realpython.com/regex-python/","re.match() validates email format (@ and .). re.findall() extracts all numbers from a string. re.sub() replaces vowels with *."],
+["Sorting algorithms","Sorting — GFG","https://www.geeksforgeeks.org/sorting-algorithms-in-python/","Implement bubble sort and selection sort. Count comparisons each. Compare output to sorted(). Print all three side by side."],
+["Algorithm challenges","Python problems — GFG","https://www.geeksforgeeks.org/python-programming-examples/","Two-sum: find pair summing to target. Longest word in sentence. Count unique words — no Counter(). Print all results."],
+["Refactor session","Refactoring — refactoring.guru","https://refactoring.guru/refactoring","quiz-game-python: extract repeated code to functions, add docstrings above every function, add input validation throughout."],
+["Top-N word frequency","String programs — GFG","https://www.geeksforgeeks.org/python-program-find-most-frequent-word-file/","Top 5 most frequent words in a paragraph — no Counter(). Build dict manually, sort by value, slice top 5. Print in order."],
+["FizzBuzzBoom","FizzBuzz — GFG","https://www.geeksforgeeks.org/fizzbuzz-implementation/","div 3->Fizz, 5->Buzz, 7->Boom. Combinations stack (15->FizzBuzz, 21->FizzBoom). Use only modulo logic — no nested if-elif."],
+["Final challenges","Python advanced — GFG","https://www.geeksforgeeks.org/python-programming-examples/","isAnagram(a,b) using dicts. Most repeated character in string. Check balanced parentheses using a list as a stack."],
+["Final review","—","#","Ensure quiz game runs perfectly. Add module docstring comparing Python to C. Run py_compile on all files. Final push to GitHub."]
+];
+
+const WEB=[
+["HTML skeleton","HTML start — MDN","https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started","Valid HTML page: doctype, html, head (title + charset meta), body. Add h1 through h3 headings and 2 paragraphs. Open in browser."],
+["Links & images","Hyperlinks — MDN","https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks","3 nav links (one opens in new tab), 1 image with descriptive alt text, 1 relative link, 1 absolute external link. Test all."],
+["Lists & tables","Text formatting — MDN","https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting","Ordered list (top 5 foods), unordered list (hobbies), table with 3 columns and 3 data rows plus a header row."],
+["HTML forms","Your first form — MDN","https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form","Form: text, email, number, radio (yes/no), checkbox, select dropdown, submit button. Every input must have a label."],
+["Semantic HTML","Semantic elements — W3Schools","https://www.w3schools.com/html/html5_semantic_elements.asp","Full layout: header, nav (3 links), main (2 sections with headings), aside, footer. All with real text content inside."],
+["CSS selectors","Selectors — MDN","https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors","External stylesheet. Style h1 (color + size), p (line-height), a:hover (color change). Use one class and one id selector."],
+["CSS box model","The box model — MDN","https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model","3 divs with different margin/padding/border combinations. Open browser DevTools and inspect the box model of each."],
+["CSS typography","Web fonts — MDN","https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts","Link Roboto from Google Fonts. Apply to body. Style h1, h2, h3, p with different sizes, weights, and letter-spacing."],
+["CSS colors & variables","CSS custom props — MDN","https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties","Define --primary, --text, --bg as custom properties. Apply across page. Button hover: background changes with 0.2s transition."],
+["CSS flexbox basics","Flexbox — MDN","https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox","5 card divs in a row. justify-content:space-between, align-items:center, gap:12px, flex-wrap:wrap. Test by narrowing window."],
+["Flexbox nav","Flexbox guide — CSS-Tricks","https://css-tricks.com/snippets/css/a-guide-to-flexbox/","Sticky nav: logo on left, links pushed right (margin-left:auto). Hover underline via transition. Test sticky on scroll."],
+["CSS grid","CSS grid — MDN","https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids","3-column card grid with gap and padding. Media query at 768px drops to 1 column. Cards should look even and consistent."],
+["CSS transitions","Transitions — MDN","https://developer.mozilla.org/en-US/docs/Web/CSS/transition","Apply CSS custom properties consistently across the page. Button hover: color and background change with transition: 0.2s ease."],
+["CSS animations","Animations — MDN","https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations","@keyframes fadeIn (opacity 0 to 1 over 0.8s) and slideUp (translateY 30px to 0). Apply fadeIn to hero, slideUp to cards."],
+["JS intro","JS first steps — MDN","https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps","let vs const vs var: show hoisting difference in console. typeof on each type. '5'+3 vs 5+'3' — explain the quirk."],
+["JS control flow","Control flow — MDN","https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling","FizzBuzz 1-20 in console.log. Switch returning day name from number 1-7. Ternary operator for pass/fail from grade."],
+["JS functions","Functions — MDN","https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions","Named, anonymous, and arrow versions of multiply(a,b). console.log(this) inside each. Observe the binding difference."],
+["JS arrays & objects","Arrays — MDN","https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays","Array of 5 numbers: push, pop, map(x2), filter(evens), find(>7). Object literal: car with 3 properties and a describe() method."],
+["JS DOM","DOM — MDN","https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents","querySelector selects h1, change its text. Create a new p element with JS. Append to body. Remove it on button click."],
+["JS events","Events — MDN","https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events","Click counter button (increments each click). Input event shows live character count. Keydown detects Enter key press."],
+["JS form validation","Validation — W3Schools","https://www.w3schools.com/js/js_validation.asp","Validate name (2+ chars), email (@ and .), message (20+ chars). Red or green feedback on each field in real time."],
+["JS localStorage","localStorage — MDN","https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage","Save dark/light preference to localStorage. Load and apply on page refresh. Toggle button switches mode and saves."],
+["Portfolio HTML","HTML intro — MDN","https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML","Complete portfolio HTML: nav, hero, about, 3 project article cards, contact form with labels, footer. All semantic."],
+["🏁 Portfolio Website","","","PROJECT 1/3: CSS for portfolio — sticky flexbox nav, centered hero, responsive 3 to 1 col project grid, CSS vars for all colors.",true],
+["🏁 Portfolio Website","","","PROJECT 2/3: JS — dark mode toggle with localStorage, scroll-to-top button, active section highlight in nav on scroll.",true],
+["🏁 Portfolio Website","","","PROJECT 3/3: Fill 3 project cards with real content + GitHub links. Test on mobile. Deploy GitHub Pages. Add URL to profile bio.",true],
+["Fetch API","Fetch — MDN","https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch","Fetch a random joke. Show 'Loading...' while awaiting. Display result on page. Refresh joke on button click without reload."],
+["Async/await","Async/await — javascript.info","https://javascript.info/async-await","Fetch quote of the day with async function + await. try/catch for network error. Show fallback quote if fetch fails."],
+["CSS polish","Animations — MDN","https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations","Card hover: translateY(-4px) + box-shadow, 0.2s ease. Hero @keyframes fadeIn on load. scroll-behavior:smooth on html."],
+["Final review","—","#","Test portfolio on a phone — every section looks right? All 3 project cards filled. Live GitHub Pages URL works. Share it!"]
+];
+
+const TRACKS=[
+  {k:'c',  n:'C',      num:'C',   cls:'lc', d:C  },
+  {k:'p',  n:'C++',    num:'CPP', cls:'lp', d:CPP},
+  {k:'y',  n:'Python', num:'PY',  cls:'ly', d:PY },
+  {k:'w',  n:'Web',    num:'WEB', cls:'lw', d:WEB}
+];
+
+const PROJ={c:[19,20,21], p:[18,19,20], y:[18,19,20], w:[23,24,25]};
+
+const XLINK={
+  6: ['C','C++'],
+  7: ['C','C++'],
+  11:['C','C++','Python'],
+  12:['C','C++'],
+  15:['C++','Python'],
+  20:['C++','Python']
+};
+
+const STORE_KEY='ayaan-coding-plan-v1';
+let cur=0;
+const done=new Set();
+
+function loadDone(){
+  try{
+    const raw=localStorage.getItem(STORE_KEY);
+    if(raw) JSON.parse(raw).forEach(k=>done.add(k));
+  }catch(e){}
+}
+
+function saveDone(){
+  try{ localStorage.setItem(STORE_KEY, JSON.stringify([...done])); }catch(e){}
+}
+
+function dc(i){ return TRACKS.filter(t=>done.has(t.k+'-'+i)).length; }
+
+function renderDgrid(){
+  document.getElementById('dgrid').innerHTML=
+    Array.from({length:30},(_,i)=>{
+      const n=dc(i);
+      const cls=i===cur?'db ac':n===4?'db ad':n>0?'db pd':'db';
+      return `<button class="${cls}" onclick="setDay(${i})" aria-label="Day ${i+1}">${i+1}</button>`;
+    }).join('');
+}
+
+function renderTracks(){
+  const xl=XLINK[cur]||[];
+  document.getElementById('tg').innerHTML=TRACKS.map(t=>{
+    const [topic, rLabel, rUrl, assign]=t.d[cur];
+    const dk=t.k+'-'+cur;
+    const isDone=done.has(dk);
+    const isP=(PROJ[t.k]||[]).includes(cur);
+    const readHtml=rUrl&&rUrl!=='#'
+      ?`<a class="rd" href="${rUrl}" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:11px" aria-hidden="true"></i>${rLabel}</a>`
+      :`<div class="rn"><i class="ti ti-hammer" aria-hidden="true"></i> Build session — no new reading today</div>`;
+    const projBadge=isP?`<span class="pb"><i class="ti ti-trophy" aria-hidden="true"></i>Mini project</span>`:'';
+    const xlBadge=xl.includes(t.n)?`<span class="xl"><i class="ti ti-arrows-exchange" aria-hidden="true"></i>Cross-language</span>`:'';
+    return `<div class="tc ${t.cls}${isDone?' dn':''}">
+      <div class="th">
+        <span>${t.n}</span>
+        <span style="opacity:.6;font-size:10px">${t.num}-${cur+1}</span>
+      </div>
+      <div class="tb">
+        <div class="tt">${topic}</div>
+        ${readHtml}
+        ${projBadge}${xlBadge}
+        <div class="ta">${assign}</div>
+        <button class="dk${isDone?' mk':''}" onclick="tog('${dk}')">
+          ${isDone?'<i class="ti ti-check" aria-hidden="true"></i> Done':'Mark done'}
+        </button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function setDay(d){
+  cur=d;
+  document.getElementById('dlb').textContent='Day '+(d+1)+' of 30';
+  document.getElementById('nb-p').disabled=d===0;
+  document.getElementById('nb-n').disabled=d===29;
+  renderDgrid();
+  renderTracks();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function tog(dk){
+  done.has(dk)?done.delete(dk):done.add(dk);
+  saveDone();
+  updateStats();
+  renderDgrid();
+  renderTracks();
+}
+
+function updateStats(){
+  const n=done.size;
+  document.getElementById('sd').textContent=n;
+  document.getElementById('sl').textContent=120-n;
+  document.getElementById('sp').textContent=Math.round(n/120*100)+'%';
+  document.getElementById('pf').style.width=(n/120*100)+'%';
+  let s=0,c2=0;
+  for(let i=0;i<30;i++){ if(dc(i)===4){c2++;s=Math.max(s,c2);}else c2=0; }
+  document.getElementById('ss').textContent=s+'🔥';
+}
+
+function resetProgress(){
+  if(!confirm('Reset all progress? This cannot be undone.')) return;
+  done.clear();
+  saveDone();
+  updateStats();
+  renderDgrid();
+  renderTracks();
+}
+
+loadDone();
+updateStats();
+setDay(0);
+</script>
+</body>
+</html>
