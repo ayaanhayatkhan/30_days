@@ -16,7 +16,8 @@ student() // This is the constructor of class which is automatically called when
 }
 void disp()
 {
-    cout<<"Student name is "<<name<<" Father name is "<<father_name<<" Roll No is "<<roll_num<<" And Percentage is "<<per<<endl;
+    cout<<"Student name is "<<name<<" Father name is "
+    <<father_name<<" Roll No is "<<roll_num<<" And Percentage is "<<per<<endl;
 
 }
 };
