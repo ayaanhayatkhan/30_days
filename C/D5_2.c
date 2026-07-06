@@ -1,13 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    char str[20];
+    char str[10];
 
     // Reading the string 
     // (with spaces) using fgets
-    fgets(str, 20, stdin);
+    fgets(str, 10, stdin);
 
     // Displaying the string using puts
-    printf("%s", str);
+    //printf("%s", str);
+    puts(str);
     return 0;
 }
