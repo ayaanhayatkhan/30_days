@@ -8,8 +8,6 @@ int row , cloumn ;
 bool draw = false ;
 
 
-
-
 void display_board(){
 
 system("clear");
